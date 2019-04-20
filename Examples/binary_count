@@ -1,0 +1,23 @@
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+    n = int(input())
+    n = str(bin(n))+"0"
+    print(n)
+    currcount = 0
+    li =[]
+    for j in n:
+        if j=="1":
+            currcount+=1
+        
+        else:
+            li.append(currcount)
+            currcount = 0
+    print(li)
+    print(max(li))
