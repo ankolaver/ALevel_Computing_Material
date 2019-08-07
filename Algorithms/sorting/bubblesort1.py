@@ -18,7 +18,6 @@ def bubblesort(arr):
 
         if swapmulti == False:
             break
-
     print(arr1)
 
 arr1 = [12,2,34,29,4,6,6,7]
