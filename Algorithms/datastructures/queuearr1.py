@@ -1,7 +1,7 @@
 #init with array
 #empty
 #full
-#size
+#size has been replaced with a simple addition
 #enqueue
 #dequeue
 #peek
