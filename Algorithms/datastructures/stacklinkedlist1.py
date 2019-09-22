@@ -13,7 +13,7 @@ class stack:
 
     def full(self):
         #not possible
-    pass
+    	pass
 
     def push(self, inputdata):
         if self.full(): #not possible
