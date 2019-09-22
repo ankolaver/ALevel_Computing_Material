@@ -23,7 +23,6 @@ class Queue:
         return self.front == self.rear
     
     def full(self):
-        print(self.length)
         return self.length == self.max-1
     
     def enqueue(self,inputdata):
@@ -53,6 +52,14 @@ class Queue:
             print("Empty queue")
 
         else:
+            curr = self.front #identify last index
+            print("Current", curr)
+            while curr<self.rear:
+                print(self.queue[curr], end = ' ')
+                curr+=1
+
+        '''
+        else:
             if self.front<self.rear:
                 for i in range(self.front,self.rear):
                     print(self.queue[i], end = ' ')
@@ -60,8 +67,8 @@ class Queue:
                 for j in range(self.front,self.max):
                     print(self.queue[j], end = ' ')
                 for k in range(0, self.rear):
-                    print(self.queue[k], end = ' ')
-        print("\nlength:", self.length)
+                    print(self.queue[k], end = ' ')'''
+
 
 # main
 q = Queue()
@@ -78,8 +85,6 @@ q.dequeue()
 q.enqueue(11)
 q.enqueue(5)
 q.enqueue(99)
-q.enqueue(77)
 q.dequeue()
-q.display()
 print(q.queue)
-    
+q.display()
