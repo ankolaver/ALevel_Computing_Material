@@ -2,7 +2,7 @@ class Node:
 	def __init__(self, data):
 		self.data = data
 		self.prev = None
-        #previous one
+        #previous data
 
 class stack:
 	def __init__(self):
