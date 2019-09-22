@@ -1,4 +1,3 @@
-#pivot sort
 def quiksort(arr):
     less = []
     more = []
@@ -6,16 +5,15 @@ def quiksort(arr):
 
     if len(arr)>1:
         pivot = arr[0]
-        for j in arr:
-            if j<pivot:
-                less.append(j)
-            elif j>pivot:
-                more.append(j)
-            else:
-                equal.append(j)
-        return sort(less)+equal+sort(more) 
+        for k in arr:
+            if k<pivot:
+                less.append(k)
+            elif k==pivot:
+                equal.append(k)
+            elif k>pivot:
+                more.append(k)
+        return quiksort(less)+equal+quiksort(more)
     else:
         return arr
-  
-arra = [23,5,1,9,2,7,15]
+arra = [0,5,1,9,2,7,15]
 quiksort(arra)
