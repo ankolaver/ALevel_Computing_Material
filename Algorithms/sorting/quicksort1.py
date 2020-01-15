@@ -16,4 +16,5 @@ def quiksort(arr):
     else:
         return arr
 arra = [0,5,1,9,2,7,15]
-quiksort(arra)
+#quiksort(arra)
+print(quiksort(arra))
