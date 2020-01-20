@@ -4,11 +4,11 @@ from queue import Queue
 import sys
 
 #inputs
-checkhost = str(input("Would you like to scan localhost? Reply yes or no: ")).lower()
+checkhost = str(input("Would you like to scan locally? Reply yes or no: ")).lower()
 if checkhost == "yes":
-    port_addr = socket.gethostname()
+    port_addr = my_socket.gethostname()
 else:
-    port_addr = str(input("Enter address to scan: "))
+    port_addr = str(input("Enter customised address to scan: "))
 
 port_low = int(input("Lower bound of port number: "))
 port_high = int(input("Higher bound of port number: "))
@@ -68,7 +68,5 @@ def port_test(ports,port_addr,my_socket):
         value.close()
     except:
         print("The port {0} appears to be busy".format(ports))
-
-
 port_test(12344,'127.0.0.1',my_socket)
 '''
