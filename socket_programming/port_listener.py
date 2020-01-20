@@ -3,6 +3,7 @@ import socket
 from queue import Queue
 import sys
 
+#inputs
 checkhost = str(input("Would you like to scan localhost? Reply yes or no: ")).lower()
 if checkhost == "yes":
     port_addr = socket.gethostname()
@@ -11,7 +12,7 @@ else:
 
 port_low = int(input("Lower bound of port number: "))
 port_high = int(input("Higher bound of port number: "))
-print_lock = threading.Lock()
+
 open_ports = []
 close_ports = []
 
@@ -20,7 +21,6 @@ def checksocket(port_addr,q):
         my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # AF_INET: address format is host and port number --> IPv4
         curr_port = q.get()
         try:
-            #print("testing",port_addr,type(curr_port),curr_port)
             value = my_socket.connect((port_addr,curr_port))
             data = my_socket.recv(1024)
             open_ports.append(curr_port)
