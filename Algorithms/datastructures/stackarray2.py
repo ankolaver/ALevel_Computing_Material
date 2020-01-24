@@ -12,7 +12,7 @@ class stack:
         return self.top == self.max-1
     
     def is_empty(self):
-        return self.top == 0
+        return self.top == -1
         
     def push(self,value):
         if self.is_full():
