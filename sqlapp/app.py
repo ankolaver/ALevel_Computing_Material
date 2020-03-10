@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, flash
 import os
 import sqlite3
 
-UPLOAD_FOLDER = 'C:\\Users\\Kenneth\\Downloads'
+#UPLOAD_FOLDER = 'C:\\Users\\Kenneth\\Downloads'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -14,7 +14,7 @@ def main():
     else:
         
         if 'file' in request.files:
-            file = request.files['file']
+            #file = request.files['file']
             #file_name = secure_filename(file.filename)
             #file.save(os.path.join(target, file_name))
             #flash("Item uploaded!")
