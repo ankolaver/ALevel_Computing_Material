@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/styles.css">
+		<title>stuff</title>
+	</head>
+	<body>
+		<h1> Here are the stuff in the database</h1>
+		{% for i in stuff %}
+		<p>{{ i[0] }}: {{ i[1] }}</p>
+		{% endfor %}
+		<form method="post">
+			<button name="del" type="submit" value="del">Delete Items</button>
+		</form>
+		<form method="get">
+			<button type="submit">Go Back</button>
+		</form>
+		
+	</body>
+</html>
