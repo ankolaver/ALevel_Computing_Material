@@ -9,10 +9,8 @@ def insertionSort(arr):
                 arr[j + 1] = arr[j] 
                 j -= 1
         arr[j + 1] = key 
-  
+    return arr
   
 #main
 arr = [12, 11, 13, 5, 6] 
 insertionSort(arr) 
-for i in range(len(arr)): 
-    print ("% d" % arr[i]) 
