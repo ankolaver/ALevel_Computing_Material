@@ -13,7 +13,7 @@ def mergesort(arr):
         # k if for the final array index
         
         while i<len(low) and j<len(high):
-            if low[i] <= high[j]:
+            if low[i] <= high[j]: # change sign of this for asceding/descending <=
                 arr[k] = low[i]
                 i+=1
             else:
