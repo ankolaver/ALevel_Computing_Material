@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>my store</title>
+</head>
+
+<body>
+
+<div>
+    <h1>Welcome to my store, {{ name }}</h1>
+    <h2>Here are the items</h2>
+    {% for item in rows %}
+        <h2>{{item[0]}}<br>{{item[1]}}</h2>
+    {% endfor %}
+</div>
+</body>
+
+</html>

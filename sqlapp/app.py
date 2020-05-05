@@ -5,7 +5,7 @@ import sqlite3
 #UPLOAD_FOLDER = 'C:\\Users\\Kenneth\\Downloads'
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/',methods=["GET","POST"])
 def main():
