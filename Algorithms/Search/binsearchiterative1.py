@@ -6,7 +6,7 @@ def binarysearch(arr,target):
         mid = (lower+upper)//2
         
         if arr[mid] == target:
-            found == True
+            found = True
             print("found the number!")
             return found
             
