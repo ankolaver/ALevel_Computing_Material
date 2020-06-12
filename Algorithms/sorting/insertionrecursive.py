@@ -9,6 +9,9 @@ def insertionsort(arr,i):
         arr[temp+1] = key
         #print(arr)
         return insertionsort(arr,i+1)
+   else:
+       #pass
+       print(arr)
 
 item = [5,10,3,1,2,7,7,4]
 insertionsort(item,1)
