@@ -2,7 +2,7 @@
 def quickersort(arr):
     if len(arr)>1:
         #arr[0] is the pivot
-        return quicksort([i for i in arr[1:] if i < arr[0]])+[arr[0]]+quicksort([i for i in arr[1:] if i > arr[0]])
+        return quickersort([i for i in arr[1:] if i < arr[0]])+[arr[0]]+quickersort([i for i in arr[1:] if i > arr[0]])
 
     else:
         return arr
