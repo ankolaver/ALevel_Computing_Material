@@ -9,7 +9,7 @@ def insertionsort(arr,i):
         arr[temp+1] = key
         #print(arr)
         return insertionsort(arr,i+1)
-   else:
+    else:
        #pass
        print(arr)
 
