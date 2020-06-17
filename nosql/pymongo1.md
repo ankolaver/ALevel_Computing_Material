@@ -17,6 +17,36 @@ clicol = client['customer']['results'] #alternative
 
 json.load() is for loading a file,json.loads() works with strings
 
+### JSON formats (looking for more wierd ones)
+Ideal file format 
+```json
+[
+{"address": 
+    {"building": "1007"}
+},
+{"address": 
+    {"building": "534"}
+},
+{"address": 
+    {"building": "9668"}
+}]
+```
+- If there are no front brackets, add them!
+
+- If there are missing commas, like below:
+```json
+{"address": {"building": "1007"}}
+{"address": {"building": "534"}}
+{"address": {"building": "9668"}}
+```
+it will be too tedious to add commas, especially for larger databases. Inserting them one by one would be more wise, I think
+```python
+with open('_______.json') as f:
+for line in f:
+    file_data = json.loads(line)
+    x = mycol.insert_one(file_data)
+    print(x.inserted_ids)
+```
 #### Example Json File (Needs opening and and closing brackets, as well as commas in between)
 
 ```json
@@ -26,15 +56,20 @@ json.load() is for loading a file,json.loads() works with strings
     "Request":[{"Date":"20190917","DriverName":"Andrew Yap","DriverHP":"85331729"}]}]
 ```
 
+##### Inserting Data
 ```python
-db.collection.find(query, projection)
-clicol.find({},{"CustName":1,"_id":0})
 hcicol.insert_one({"CustName":new_name, "CustHP":new_hp,
     "Request":[{"Start":start,"End":end, "Cost":cost, "Time":time, "Date":date,"DriverName":driver_n,"DriverHP":driver_hp}]})
 
 ```
 
 ## Query and Projection OperaTORS
+
+##### Finding Data
+```python
+db.collection.find(query, projection)
+clicol.find({},{"CustName":1,"_id":0})
+```
 
 #### Comparison
 |Name|	Description                                                        |
