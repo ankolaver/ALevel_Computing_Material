@@ -91,3 +91,18 @@ clicol.find({},{"CustName":1,"_id":0})
 |$not	|Inverts the effect of a query expression and returns documents that do not match the query expression.|
 |$nor	|Joins query clauses with a logical NOR returns all documents that fail to match both clauses.  |
 |$or|	Joins query clauses with a logical OR returns all documents that match the conditions of either clause. |
+
+## [Pipeline](https://www.w3resource.com/mongodb/shell-methods/collection/db-collection-aggregate.php)
+
+
+## MongoDB Shell Commands
+|**Command**|**Description**|
+|:-------------:|:------------------:|
+|mongo|connect to local host 27017|
+|help|get help|
+|show dbs	|Showcase dbs in current|
+|show collections	|Showcase collections in current database|
+|use <database/column_name>	|Switch to a database/column name|
+|db.collection.insert( <document> )|Inserting a new document in a collection|
+|db.listCommands()|List Commands|
+|db.<collection_name>.find().limit(5).pretty(); |Showcases 5 documents from collection. _pretty_ is meant to present in in JSON format|
