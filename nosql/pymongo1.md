@@ -3,6 +3,7 @@
 ```python
 from pymongo import MongoClient
 import json
+import csv #if csv reader needed
 ```
 
 ### Connecting to a Database
@@ -13,12 +14,10 @@ clicol = client.customer.results
 clidb = client['customer'] #alternative
 clicol = client['customer']['results'] #alternative
 ```
-### Input of items
-
-json.load() is for loading a file,json.loads() works with strings
+### Pre-loading files
 
 ### JSON formats (looking for more wierd ones)
-Ideal file format 
+##### Ideal file format 
 ```json
 [
 {"address": 
@@ -39,14 +38,6 @@ Ideal file format
 {"address": {"building": "534"}}
 {"address": {"building": "9668"}}
 ```
-it will be too tedious to add commas, especially for larger databases. Inserting them one by one would be more wise, I think
-```python
-with open('_______.json') as f:
-for line in f:
-    file_data = json.loads(line)
-    x = mycol.insert_one(file_data)
-    print(x.inserted_ids)
-```
 #### Example Json File (Needs opening and and closing brackets, as well as commas in between)
 
 ```json
@@ -56,22 +47,55 @@ for line in f:
     "Request":[{"Date":"20190917","DriverName":"Andrew Yap","DriverHP":"85331729"}]}]
 ```
 
-##### Inserting Data
+## Inserting Data
+
+### Function to convert between CSV and JSON
+_takes each row as json entry_
+```
+def csv_to_json(filepath,mainkey):
+    with open(filepath) as file:
+        reader = csv.DictReader(file)
+        fin = []
+        for row in reader:
+            fin.append(row)
+    
+    with open(f'{filepath[:-4]}.json','w') as jsonf:
+        jsonf.write(json.dumps(fin, indent=4))
+    return fin
+```
+> json.load() is for loading a file, json.loads() works with strings
+### Inserting Documents one by one
+__It will be too tedious to add commas, especially for larger databases. Inserting them one by one would be more wise perhaps__
+```python
+with open('_______.json') as f:
+for line in f:
+    file_data = json.loads(line)
+    x = mycol.insert_one(file_data)
+    print(x.inserted_ids)
+```
+__Inserting a Specific Document__
 ```python
 hcicol.insert_one({"CustName":new_name, "CustHP":new_hp,
     "Request":[{"Start":start,"End":end, "Cost":cost, "Time":time, "Date":date,"DriverName":driver_n,"DriverHP":driver_hp}]})
-
+```
+### Inserting Many Documents
+```python
+def load_documents(mongocol,filepath):
+    with open(filepath) as f:
+        file_data = json.load(f)
+        x = mongocol.insert_many(file_data)
+        return x.inserted_ids
 ```
 
 ## Query and Projection OperaTORS
 
-##### Finding Data
+#### Finding Data
 ```python
 db.collection.find(query, projection)
 clicol.find({},{"CustName":1,"_id":0})
 ```
 
-#### Comparison
+### Comparison
 |Name|	Description                                                        |
 |:-------------:| --------------------------------------------------------:|
 |$eq |	Matches values that are equal to a specified value.                |
@@ -84,7 +108,7 @@ clicol.find({},{"CustName":1,"_id":0})
 |$nin|	Matches none of the values specified in an array.                  |
 
 
-#### Logical
+### Logical
 |Name	|Description 
 |:-------------:| ------------------------------------:|
 |$and	|Joins query clauses with a logical AND returns all documents that match the conditions of both clauses.|
