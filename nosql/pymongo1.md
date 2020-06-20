@@ -51,7 +51,7 @@ clicol = client['customer']['results'] #alternative
 
 ### Function to convert between CSV and JSON
 _takes each row as json entry_
-```
+```python
 def csv_to_json(filepath,mainkey):
     with open(filepath) as file:
         reader = csv.DictReader(file)
