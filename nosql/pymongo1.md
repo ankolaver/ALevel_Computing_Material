@@ -68,10 +68,10 @@ def csv_to_json(filepath,mainkey):
 __It will be too tedious to add commas, especially for larger databases. Inserting them one by one would be more wise perhaps__
 ```python
 with open('_______.json') as f:
-for line in f:
-    file_data = json.loads(line)
-    x = mycol.insert_one(file_data)
-    print(x.inserted_ids)
+    for line in f:
+        file_data = json.loads(line)
+        x = mycol.insert_one(file_data)
+        print(x.inserted_ids)
 ```
 __Inserting a Specific Document__
 ```python
