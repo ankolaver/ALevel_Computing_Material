@@ -14,3 +14,16 @@ def insertionSort(arr):
 #main
 arr = [12, 11, 13, 5, 6] 
 insertionSort(arr) 
+
+def insertionsort(arr):
+    for i in range(len(arr)):
+        insert_val = arr[i]
+        insert_index = i
+        while insert_index > 0 and arr[insert_index-1] > insert_val:
+            arr[insert_index] = arr[insert_index-1]
+            insert_index-=1
+        arr[insert_index] = insert_val
+
+    return arr
+
+insertionsort([9,6,2,4,1,8])
