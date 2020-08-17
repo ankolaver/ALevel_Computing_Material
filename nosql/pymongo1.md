@@ -95,6 +95,12 @@ db.collection.find(query, projection)
 clicol.find({},{"CustName":1,"_id":0})
 ```
 
+#### Print in reverse/ascending order
+```python
+mydoc = mycol.find().sort("name") #ascending order
+mydoc = mycol.find().sort("name", -1) #reverse order
+```
+
 ### Comparison
 |Name|	Description                                                        |
 |:-------------:| --------------------------------------------------------:|
