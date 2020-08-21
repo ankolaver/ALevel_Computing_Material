@@ -86,7 +86,12 @@ def load_documents(mongocol,filepath):
         x = mongocol.insert_many(file_data)
         return x.inserted_ids
 ```
-
+## Updating a database
+```python
+criteria = {"page_count": {"$exists": False}}
+newValues = {"$set":{"page_count": 'Less Than 100 Pages'}}
+bkCol.update_many(criteria, newValues)
+```
 ## Query and Projection OperaTORS
 
 #### Finding Data
