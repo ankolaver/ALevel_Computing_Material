@@ -56,11 +56,17 @@ class BSTree:
                 node.Left = TreeNode(newvalue)
                 self.Count+=1
     
-    def ReverseOrder(self, item):
-        if item is not None:
-            self.ReverseOrder(item.Right)
-            print(item.Value, end=" ")
-            self.ReverseOrder(item.Left)
+    def ReverseOrder(self, Tree):
+        if Tree is not None:
+            self.ReverseOrder(Tree.Right)
+            print(Tree.Value, end=" ")
+            self.ReverseOrder(Tree.Left)
+            
+    def InOrder(self, Tree):
+        if Tree is not None:
+            self.ReverseOrder(Tree.Left)
+            print(Tree.Value, end=" ")
+            self.ReverseOrder(Tree.Right)
                 
     def Search(self,value,node = None):
         if not node:
@@ -89,4 +95,5 @@ with open('INSERTTOTREE.txt') as f:
         newtree.Insert(name)
         
 newtree.ReverseOrder(newtree.Root)
+newtree.InOrder(newtree.Root)
 newtree.Search("John")
