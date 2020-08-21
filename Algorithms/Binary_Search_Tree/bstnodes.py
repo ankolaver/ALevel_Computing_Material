@@ -9,7 +9,8 @@ class BSTree:
     def __init__(self):
         self.Root = None
         self.Count = 0
-        
+       
+    #Iterative Implementation
     def Insert(self,newvalue):
         newnode = TreeNode(newvalue)
         if self.Root is None:
