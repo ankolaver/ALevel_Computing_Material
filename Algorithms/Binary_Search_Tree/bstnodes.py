@@ -33,6 +33,28 @@ class BSTree:
                         Found = True
                     else: 
                         current = current.Right
+                        
+    # Recursive Implementation
+    def Insert_original(self, Tree, newvalue):
+        if self.Root is None:
+            self.Root = TreeNode(newvalue)
+            self.Count+=1
+        else:
+            self.Insert_recursive(self.Root,newvalue)
+            
+    def Insert_recursive(self, node, newvalue):
+        if newvalue >= node.Value:
+            if node.Right != None:
+                return self.Insert_recursive(node.Right, newvalue)
+            else:
+                node.Right = TreeNode(newvalue)
+                self.Count+=1
+        else: #newvalue < current
+            if node.Left != None:
+                return self.Insert_recursive(node.Left, newvalue)
+            else:
+                node.Left = TreeNode(newvalue)
+                self.Count+=1
     
     def ReverseOrder(self, item):
         if item is not None:
