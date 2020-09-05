@@ -2,7 +2,7 @@
 ## Algorithms
 
 ### Search 
-- binary search tree
+- binary search
 - linear search
 
 ### Sort (Iterative & recursive maybe soon...)
@@ -30,9 +30,66 @@
 
 ## [NoSQL](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/nosql/pymongo1.md#initializing-the-database)
 
-## Python Testing
+## [Python Testing](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/pythontesting/bankacct/test_bankacct.py)
 
 ## Socket Programming
 Client and socket
 
+socket.send can send less bytes than requested
 
+socket.sendall sends the entire data or throws an error
+
+```python
+#server code
+import socket
+
+server_socket = socket.bind(('127.0.0.1',12345))
+server_socket.listen()
+conn, addr = server_socket.accept()
+
+while some_condition:
+    #receive input from client
+    msg = conn.recv(1024).decode()
+    
+    #sendall sends every byte or throws an exception
+    conn.sendall(b' Some stuff ')
+    conn.sendall(Somestuff.encode()) #alternative encoding
+    
+conn.close()
+server_socket.close()
+```
+
+```python
+#client code
+import socket
+
+client_socket = socket.connect(('127.0.0.1',12345))
+client_socket.sendall(b' Some stuff ')
+msg = client_socket.recv(1024)
+client_socket.close()
+```
+
+## Misc Data Conversion
+#### Python Dates
+```python
+import datetime
+x = datetime.datetime(2018, 6, 1) #convert to datetime object
+
+#format time into certain string
+print(x.strftime("%a"), x.strftime("%B")) 
+```
+%a --> Wed 	
+
+%A --> Wednesday
+
+%b --> Dec 	
+
+%B --> December
+
+%y 	--> [Year] 18 
+
+%Y 	--> 2018
+
+%x  --> 12/31/18 
+
+%X 	--> 17:41:00
