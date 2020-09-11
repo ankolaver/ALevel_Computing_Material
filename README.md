@@ -15,7 +15,7 @@
 | merge sort     | O(n log(n))  | O(n log(n))  |
 | quick sort     | O(n log(n))  | O (n^2)      |
     
-### Datastructures
+### [Datastructures](https://github.com/Kennethkcpdhs/Honey_Pancake/tree/master/Algorithms/datastructures)
 - linkedlist 
 - queue with array implementation
 - queue with linkedlist implementation
