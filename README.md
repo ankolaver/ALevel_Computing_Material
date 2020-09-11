@@ -6,7 +6,8 @@
 - linear search
 
 ### Sort (Iterative & recursive maybe soon...)
-![image](https://user-images.githubusercontent.com/47784720/84563618-74385980-ad8f-11ea-9bd1-cd3009df81bd.png)
+<img src="https://user-images.githubusercontent.com/47784720/84563618-74385980-ad8f-11ea-9bd1-cd3009df81bd.png" alt="time" width="750"/>
+
 | Sorting Type   | Best         | Worse        |
 | :------------: | :----------: | :----------: |
 | bubble sort    | O(n)         | O(n^2)       |
@@ -28,6 +29,7 @@
 - SQL
 - Reading from a file
 
+## [SQL](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/sql/sql_help.md) 
 ## [NoSQL](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/nosql/pymongo1.md#initializing-the-database)
 
 ## [Python Testing](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/pythontesting/bankacct/test_bankacct.py)
