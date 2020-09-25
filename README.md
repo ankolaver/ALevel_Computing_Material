@@ -1,19 +1,19 @@
 ##### Pancakes - Food for Computing Revision
 ## Algorithms
 
-### Search 
+### [Search](https://github.com/Kennethkcpdhs/Honey_Pancake/tree/master/Algorithms/Search) 
 - binary search
 - linear search
 
-### Sort (Iterative & recursive maybe soon...)
+### [Sort (Iterative & recursive maybe soon...)](https://github.com/Kennethkcpdhs/Honey_Pancake/tree/master/Algorithms/sorting)
 <img src="https://user-images.githubusercontent.com/47784720/84563618-74385980-ad8f-11ea-9bd1-cd3009df81bd.png" alt="time" width="750"/>
 
-| Sorting Type   | Best         | Worse        |
-| :------------: | :----------: | :----------: |
-| bubble sort    | O(n)         | O(n^2)       |
-| insertion sort | O(n)         | O(n^2)       |
-| merge sort     | O(n log(n))  | O(n log(n))  |
-| quick sort     | O(n log(n))  | O (n^2)      |
+| Sorting Type   | Best         | Worse        | Stable?|
+| :------------: | :----------: | :----------: | :----: |
+| bubble sort    | O(n)         | O(n^2)       | Yes|
+| insertion sort | O(n)         | O(n^2)       |Yes|
+| merge sort     | O(n log(n))  | O(n log(n))  |Yes|
+| quick sort     | O(n log(n))  | O (n^2)      |No, but possible stability modifications <br> that are array-based use extra O(n) time|
     
 ### [Datastructures](https://github.com/Kennethkcpdhs/Honey_Pancake/tree/master/Algorithms/datastructures)
 - linkedlist 
@@ -22,7 +22,7 @@
 - stack with array implementation
 - stack with linked list implementation
 
-### Classes
+### [Classes](https://github.com/Kennethkcpdhs/Honey_Pancake/tree/master/Algorithms/classes)
 - Inheritance and encapsulation
 
 ## Web Apps (Flask)
