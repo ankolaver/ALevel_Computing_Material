@@ -49,7 +49,7 @@ table {
 ```
 
 ##### Closing tag(s) not needed in input boxes
-<img.../>, <input/>  and <br /> are _void elements_ thus they can be close with `>` or `/>`
+<img.../>, <input.../>  and <br.../> are _void elements_ thus they can be close with `>` or `/>`
 
 
 ### Inserting to the database
