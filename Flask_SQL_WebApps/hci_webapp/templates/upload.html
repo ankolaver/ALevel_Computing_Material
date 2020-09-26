@@ -1,0 +1,18 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/style.css" ></link>
+	<title>Upload</title>
+</head>
+
+<body>
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="bigpic"/>
+		<input type="submit"/>
+	</form>
+	{% for filename in filenames %}
+		<div>
+			<img src="{{ url_for('static', filename=filename) }}">
+		</div>
+	{% endfor %}
+</body>
+</html>

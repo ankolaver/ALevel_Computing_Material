@@ -1,3 +1,57 @@
+### Basic UI/UX Elements Tested
+
+#### Body Styling
+```css
+body {
+	padding: 30px 30px;
+	font-family: sans-serif;
+	background-color: orange
+}
+```
+#### Creation of Tables
+```html
+<table>
+	<tr>
+		<th>Heading 1</th>
+		<th>Heading 2</th>
+	</tr>
+	<!-- Looping through data with jinja to form table rows-->
+	{% for item in data %}
+	<tr>
+		<td>{{ item[0] }}</td>
+		<td>{{ item[1] }}</td>
+	</tr>
+	{% endfor %}
+</table>
+```
+Let's style the tables
+```css
+table, th, td {
+	border: 2px solid grey;
+	padding: 10px;
+	text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%; /*makes table occupy full space*/
+}	
+```
+#### Creation of Forms
+```html
+ <form method="post" action="/">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="submit"></input>
+</form> 
+```
+
+##### Closing tag(s) not needed in input boxes
+<img.../>, <input/>  and <br /> are _void elements_ thus they can be close with `>` or `/>`
+
+
 ### Inserting to the database
 ```python
 import sqlite3
@@ -54,4 +108,26 @@ selects records that have matching values in both tables
 SELECT c.CustomerName, o.OrderID, o.OrderDate
 FROM Customers c 
 INNER JOIN Orders o ON o.CustomerID = c.CustomerID;
+```
+
+### Miscellaneous
+
+Select Distinct Records
+```sql
+SELECT COUNT(DISTINCT Country) FROM Customers;
+```
+_MAX(), MIN(), SUM() are applied similarly as shown above_
+
+Order By ASC or DESC
+```sql
+SELECT col1, col2, ...
+FROM table_name
+ORDER BY col1, col2, ... ASC; 
+```
+
+Update
+```sql
+UPDATE table_name
+SET col1 = val1, ...
+WHERE condition; 
 ```

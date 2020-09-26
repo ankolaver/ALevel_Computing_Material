@@ -14,7 +14,7 @@
 | insertion sort | O(n)         | O(n^2)       |Yes|
 | merge sort     | O(n log(n))  | O(n log(n))  |Yes|
 | quick sort     | O(n log(n))  | O (n^2)      |No, but possible stability modifications <br> that are array-based use extra O(n) time|
-    
+
 ### [Datastructures](https://github.com/Kennethkcpdhs/Honey_Pancake/tree/master/Algorithms/datastructures)
 - linkedlist 
 - queue with array implementation
@@ -26,10 +26,9 @@
 - Inheritance and encapsulation
 
 ## Web Apps (Flask)
-- SQL
+- [SQL/HTML/CSS Guide](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/Flask_SQL_WebApps/flask_sql_help.md) 
 - [Reading from a file](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/hci_webapp/app.py)
 
-## [SQL](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/sql/sql_help.md) 
 ## [NoSQL](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/nosql/pymongo1.md#initializing-the-database)
 
 ## [Python Testing](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/pythontesting/bankacct/test_bankacct.py)

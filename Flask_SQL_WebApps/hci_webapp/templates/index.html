@@ -1,0 +1,24 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/style.css" ></link>
+	<title>Data</title>
+</head>
+
+<body>
+	<table>
+	<h2>Products listed are based on the location {{ u_location }}</h2>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Price</th>
+	</tr>
+	{% for item in data %}
+	<tr>
+		<td>{{ item[0] }}</td>
+		<td>{{ item[1] }}</td>
+		<td>{{ item[2] }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+	
+</body>
