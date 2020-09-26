@@ -44,7 +44,7 @@ table {
   <input type="text" id="fname" name="fname"><br>
   <input type="radio" id="male" name="gender" value="male">
   <label for="male">Male</label><br>
-  <input type="submit"></input>
+  <input type="submit">
 </form> 
 ```
 
