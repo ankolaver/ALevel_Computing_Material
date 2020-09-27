@@ -75,6 +75,41 @@ conn.close()
 ```
 `OR IGNORE` is an optional clause; prevents duplicates due to errors when inserting
 
+### Uploading files
+Backend python
+```python
+....
+from werkzeug.utils import secure_filename
+....
+app.config['SECRET_KEY'] = '9483f' #random
+app.config['UPLOAD_FOLDER'] = 'static/'
+
+f = request.files['bigpic']
+filenames = []
+if f:
+    f_name = secure_filename(f.filename)
+    filenames.append(f_name)
+    f.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
+
+return render_template("upload.html", filenames=filenames)
+```
+html page
+```html
+<form action="/upload" method="post" enctype="multipart/form-data">
+	<input type="file" name="bigpic"/>
+	<input type="submit"/>
+</form>
+{% for filename in filenames %}
+<div>
+	<img src="{{ url_for('static', filename=filename) }}">
+</div>
+{% endfor %}
+```
+`multipart/form-data` is necessary to ensure no characters when uploading files are encoded. 
+
+Default value tends to be `application/x-www-form-urlencoded ` which encodes data
+
+
 ### Left Join or vice versa for RIGHT JOIN
 <img src="https://user-images.githubusercontent.com/47784720/92840827-2aa1ee00-f414-11ea-88c0-1156d5f97202.jpg" alt="SQL Left Join" width="500"/>
 
