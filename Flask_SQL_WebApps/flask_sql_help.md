@@ -78,20 +78,27 @@ conn.close()
 ### Uploading files
 Backend python
 ```python
-....
+....#insert code
 from werkzeug.utils import secure_filename
-....
+....#insert code
+
+
 app.config['SECRET_KEY'] = '9483f' #random
 app.config['UPLOAD_FOLDER'] = 'static/'
 
-f = request.files['bigpic']
-filenames = []
-if f:
-    f_name = secure_filename(f.filename)
-    filenames.append(f_name)
-    f.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
+@app.route("/upload",methods=["GET","POST"])
+def upload():
+    if request.method == "GET":
+        return render_template("upload.html")
+    else:
+	f = request.files['bigpic']
+	filenames = []
+	if f:
+	    f_name = secure_filename(f.filename)
+	    filenames.append(f_name)
+	    f.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
 
-return render_template("upload.html", filenames=filenames)
+	return render_template("upload.html", filenames=filenames)
 ```
 html page
 ```html
