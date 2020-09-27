@@ -21,13 +21,14 @@
 - queue with linkedlist implementation
 - stack with array implementation
 - stack with linked list implementation
+- BST (array/linkedlist)
 
 ### [Classes](https://github.com/Kennethkcpdhs/Honey_Pancake/tree/master/Algorithms/classes)
 - Inheritance and encapsulation
 
 ## Web Apps (Flask)
 - [SQL/HTML/CSS Guide](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/Flask_SQL_WebApps/flask_sql_help.md) 
-- [Reading from a file](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/hci_webapp/app.py)
+- [Reading from a file](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/Flask_SQL_WebApps/flask_sql_help.md#uploading-files)
 
 ## [NoSQL](https://github.com/Kennethkcpdhs/Honey_Pancake/blob/master/nosql/pymongo1.md#initializing-the-database)
 
