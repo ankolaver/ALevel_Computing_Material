@@ -71,7 +71,7 @@ with open('_______.json') as f:
     for line in f:
         file_data = json.loads(line)
         x = mycol.insert_one(file_data)
-        print(x.inserted_ids)
+        print(x)
 ```
 __Inserting a Specific Document__
 ```python
@@ -92,6 +92,14 @@ criteria = {"page_count": {"$exists": False}}
 newValues = {"$set":{"page_count": 'Less Than 100 Pages'}}
 bkCol.update_many(criteria, newValues)
 ```
+
+## Drop a database or column using pymongo
+```python
+mycol.drop() #optional to drop
+client.drop_database('GovTech')
+client.close()
+```
+
 ## Query and Projection OperaTORS
 
 #### Finding Data
@@ -127,6 +135,11 @@ mydoc = mycol.find().sort("name", -1) #reverse order
 |$nor	|Joins query clauses with a logical NOR returns all documents that fail to match both clauses.  |
 |$or|	Joins query clauses with a logical OR returns all documents that match the conditions of either clause. |
 
+#### Example Code
+```python
+query = {"$and":[{"continent":"Asia"},{"aircraft_carrier":{"$exists":False}}]}
+```
+
 ## [Pipeline](https://www.w3resource.com/mongodb/shell-methods/collection/db-collection-aggregate.php)
 
 
@@ -138,6 +151,7 @@ mydoc = mycol.find().sort("name", -1) #reverse order
 |show dbs	|Showcase dbs in current|
 |show collections	|Showcase collections in current database|
 |use <database/column_name>	|Switch to a database/column name|
-|db.collection.insert( <document> )|Inserting a new document in a collection|
+|__db.dropDatabase()__|Dropping a database|
+|db.collection.insert(<document>)|Inserting a new document in a collection|
 |db.listCommands()|List Commands|
 |db.<collection_name>.find().limit(5).pretty(); |Showcases 5 documents from collection. _pretty_ is meant to present in in JSON format|
