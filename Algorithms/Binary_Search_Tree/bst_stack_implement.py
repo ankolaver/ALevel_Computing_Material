@@ -28,6 +28,19 @@ class Tree:
                         found = True
                     else:
                         curr = curr.right
+                        
+    def insert_recursive(self, root,newdata):
+        if newdata < root.data:
+            if root.left is None:
+                root.left = Node(newdata)
+            else:
+                self.insert_recursive(root.left,newdata)
+        else:
+            if root.right is None:
+                root.right = Node(newdata)
+            else:
+                self.insert_recursive(root.right,newdata)
+        
             
     def inorder(self,root):
         curr = root
@@ -63,7 +76,6 @@ class Tree:
     def preorder(self,root):
         curr = root
         li = []
-        done = False
         print()
         li.append(curr)
         while li:
@@ -80,8 +92,8 @@ t.insert_iterative(6)
 t.insert_iterative(7)
 t.insert_iterative(1)
 t.insert_iterative(2)
-t.insert_iterative(8)
-t.insert_iterative(18)
+t.insert_recursive(t.root,8)
+t.insert_recursive(t.root,18)
 t.inorder(t.root)
 t.preorder(t.root) 
 t.postorder(t.root)
